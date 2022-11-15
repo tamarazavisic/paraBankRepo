@@ -26,12 +26,14 @@ export function getTransferCompleteMessage() {
 
 export function clickOnTransferFundsButton() {
   getTransferFundsButton().click();
+  cy.wait(2000);
 }
 export function insertAmount(amount) {
   getAmountField().type(amount);
 }
 export function clickOnTransferButton() {
   getTransferButton().click();
+  cy.wait(2000);
 }
 
 // ASSERTIONS

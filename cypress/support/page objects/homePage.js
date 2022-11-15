@@ -43,6 +43,9 @@ export function clickOnLoginButton() {
 export function clickOnRegisterButton() {
   getRegisterButton().click();
 }
+export function clickOnLogOutButton() {
+  getLogOutButton().click();
+}
 
 // ASSERTIONS
 
@@ -51,4 +54,7 @@ export function validateValidUrlIsVisited() {
 }
 export function validateUserIsSuccessfullyLoggedIn() {
   getLogOutButton().should("be.visible");
+}
+export function validateUserIsSuccessfullyLoggedOut() {
+  getLoginButton().should("be.visible");
 }

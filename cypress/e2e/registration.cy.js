@@ -13,7 +13,6 @@ export const password = "lozinka12345";
 
 import {
   visitUrl,
-  validateValidUrlIsVisited,
   clickOnRegisterButton,
 } from "../support/page objects/homePage";
 
@@ -28,10 +27,6 @@ import {
 describe("registration", () => {
   beforeEach(() => {
     visitUrl();
-  });
-
-  it("should be able to visit webpage", () => {
-    validateValidUrlIsVisited();
   });
 
   it("should be able to register", () => {

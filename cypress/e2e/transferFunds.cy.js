@@ -15,6 +15,7 @@ import {
   clickOnTransferButton,
   clickOnTransferFundsButton,
   insertAmount,
+  validateFundsAreTransferred,
 } from "../support/page objects/transferFundsPage";
 
 describe("transfer funds", () => {
@@ -29,5 +30,6 @@ describe("transfer funds", () => {
     clickOnTransferFundsButton();
     insertAmount(amount);
     clickOnTransferButton();
+    validateFundsAreTransferred();
   });
 });
