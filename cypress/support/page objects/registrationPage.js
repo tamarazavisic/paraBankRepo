@@ -127,8 +127,6 @@ export function validateUserIsSuccessfullyRegistered() {
   getLogOutButton().should("be.visible");
 }
 
-// Is there a way we can validate this differently, in more general way? ->
-
-export function validateUserCantLoginWithoutAllFieldsPopulated() {
-  getPasswordConfirmationErrorMessage().should("be.visible");
+export function validateUserCantRegisterWithoutAllFieldsPopulated() {
+  getLogOutButton().should("not.exist");
 }

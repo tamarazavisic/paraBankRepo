@@ -47,6 +47,12 @@ export function clickOnLogOutButton() {
   getLogOutButton().click();
 }
 
+export function logIn(username, password) {
+  getUsernameField().type(username);
+  getPasswordField().type(password);
+  getLoginButton().click();
+}
+
 // ASSERTIONS
 
 export function validateValidUrlIsVisited() {

@@ -8,8 +8,9 @@ export const state = "state";
 export const zipcode = "21000";
 export const phoneNumber = "12345678";
 export const ssn = "ssn";
-export const username = "username1234";
-export const password = "lozinka12345";
+export const username = "tamarazavisic";
+export const password = "neprobojnalozinka";
+export const amount = "1000";
 
 import {
   visitUrl,
@@ -21,7 +22,7 @@ import {
   validateUserIsSuccessfullyRegistered,
   fillOutFormSuccessfully,
   fillOutFormWithoutOneFieldPopulated,
-  validateUserCantLoginWithoutAllFieldsPopulated,
+  validateUserCantRegisterWithoutAllFieldsPopulated,
 } from "../support/page objects/registrationPage";
 
 describe("registration", () => {
@@ -63,6 +64,6 @@ describe("registration", () => {
       password
     );
     clickOnRegisterButtonOnRegistrationPage();
-    validateUserCantLoginWithoutAllFieldsPopulated();
+    validateUserCantRegisterWithoutAllFieldsPopulated();
   });
 });

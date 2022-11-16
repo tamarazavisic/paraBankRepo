@@ -4,12 +4,7 @@ export const username = "Tamara";
 export const password = "lozinka";
 export const amount = "500";
 
-import {
-  visitUrl,
-  insertUsername,
-  clickOnLoginButton,
-  insertPassword,
-} from "../support/page objects/homePage";
+import { visitUrl, logIn } from "../support/page objects/homePage";
 
 import {
   clickOnTransferButton,
@@ -21,9 +16,7 @@ import {
 describe("transfer funds", () => {
   beforeEach(() => {
     visitUrl();
-    insertUsername(username);
-    insertPassword(password);
-    clickOnLoginButton();
+    logIn(username, password);
   });
 
   it("should be able to tranfer funds", () => {
