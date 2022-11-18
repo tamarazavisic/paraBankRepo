@@ -1,13 +1,11 @@
 /// <reference types="cypress" />
 
-import {
-  visitUrl,
-  validateValidUrlIsVisited,
-} from "../support/page objects/homePage";
+import BasePage from "../support/pages/basePage";
 
 describe("navigation", () => {
+  const basePage = new BasePage();
+
   it("should be able to navigate to valid url", () => {
-    visitUrl();
-    validateValidUrlIsVisited();
+    basePage.validateValidUrlIsVisited();
   });
 });

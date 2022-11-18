@@ -1,35 +1,27 @@
 /// <reference types="cypress" />
 
-export const username = "Tamara";
-export const password = "lozinka";
-
-import {
-  visitUrl,
-  insertUsername,
-  clickOnLoginButton,
-  insertPassword,
-  validateUserIsSuccessfullyLoggedIn,
-  clickOnLogOutButton,
-  validateUserIsSuccessfullyLoggedOut,
-} from "../support/page objects/homePage";
+import HomePage from "../support/pages/homePage";
+import BasePage from "../support/pages/basePage";
 
 describe("login", () => {
+  const homePage = new HomePage();
+  const basePage = new BasePage();
+
   beforeEach(() => {
-    visitUrl();
+    basePage.visitUrl();
   });
 
   it("should be able to login with valid credentials", () => {
-    insertUsername(username);
-    insertPassword(password);
-    clickOnLoginButton();
-    validateUserIsSuccessfullyLoggedIn();
+    homePage.validateUserIsSuccessfullyLoggedIn(
+      Cypress.env("username"),
+      Cypress.env("password")
+    );
   });
 
   it("should be able to log out", () => {
-    insertUsername(username);
-    insertPassword(password);
-    clickOnLoginButton();
-    clickOnLogOutButton();
-    validateUserIsSuccessfullyLoggedOut();
+    homePage.validateUserIsSuccessfullyLoggedOut(
+      Cypress.env("username"),
+      Cypress.env("password")
+    );
   });
 });

@@ -1,69 +1,21 @@
 /// <reference types="cypress" />
 
-export const firstName = "Tamara";
-export const lastName = "Zavisic";
-export const address = "address";
-export const city = "city";
-export const state = "state";
-export const zipcode = "21000";
-export const phoneNumber = "12345678";
-export const ssn = "ssn";
-export const username = "tamarazavisic";
-export const password = "neprobojnalozinka";
-export const amount = "1000";
-
-import {
-  visitUrl,
-  clickOnRegisterButton,
-} from "../support/page objects/homePage";
-
-import {
-  clickOnRegisterButtonOnRegistrationPage,
-  validateUserIsSuccessfullyRegistered,
-  fillOutFormSuccessfully,
-  fillOutFormWithoutOneFieldPopulated,
-  validateUserCantRegisterWithoutAllFieldsPopulated,
-} from "../support/page objects/registrationPage";
+import BasePage from "../support/pages/basePage";
+import RegistrationPage from "../support/pages/registrationPage";
 
 describe("registration", () => {
+  const basePage = new BasePage();
+  const registrationPage = new RegistrationPage();
+
   beforeEach(() => {
-    visitUrl();
+    basePage.visitUrl();
   });
 
   it("should be able to register", () => {
-    clickOnRegisterButton();
-    fillOutFormSuccessfully(
-      firstName,
-      lastName,
-      address,
-      city,
-      state,
-      zipcode,
-      phoneNumber,
-      ssn,
-      username,
-      password,
-      password
-    );
-    clickOnRegisterButtonOnRegistrationPage();
-    validateUserIsSuccessfullyRegistered();
+    registrationPage.validateUserIsSuccessfullyRegistered();
   });
 
   it("should not be able to register user without one field populated", () => {
-    clickOnRegisterButton();
-    fillOutFormWithoutOneFieldPopulated(
-      firstName,
-      lastName,
-      address,
-      city,
-      state,
-      zipcode,
-      phoneNumber,
-      ssn,
-      username,
-      password
-    );
-    clickOnRegisterButtonOnRegistrationPage();
-    validateUserCantRegisterWithoutAllFieldsPopulated();
+    registrationPage.validateUserCantRegisterWithoutAllFieldsPopulated();
   });
 });
