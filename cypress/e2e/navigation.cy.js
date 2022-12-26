@@ -2,9 +2,9 @@
 
 import BasePage from "../support/pages/basePage";
 
-describe("navigation", () => {
-  const basePage = new BasePage();
+const basePage = new BasePage();
 
+describe("navigation", () => {
   it("should be able to navigate to valid url", () => {
     basePage.validateValidUrlIsVisited();
   });

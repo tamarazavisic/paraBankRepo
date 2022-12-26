@@ -3,10 +3,10 @@
 import HomePage from "../support/pages/homePage";
 import BasePage from "../support/pages/basePage";
 
-describe("login", () => {
-  const homePage = new HomePage();
-  const basePage = new BasePage();
+const homePage = new HomePage();
+const basePage = new BasePage();
 
+describe("login", () => {
   beforeEach(() => {
     basePage.visitUrl();
   });

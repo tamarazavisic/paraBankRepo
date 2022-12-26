@@ -20,7 +20,5 @@ Cypress.on("uncaught:exception", (err) => {
   return false;
 });
 
-import { faker } from "@faker-js/faker";
-
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

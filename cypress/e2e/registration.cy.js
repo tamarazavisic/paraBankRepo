@@ -3,10 +3,10 @@
 import BasePage from "../support/pages/basePage";
 import RegistrationPage from "../support/pages/registrationPage";
 
-describe("registration", () => {
-  const basePage = new BasePage();
-  const registrationPage = new RegistrationPage();
+const basePage = new BasePage();
+const registrationPage = new RegistrationPage();
 
+describe("registration", () => {
   beforeEach(() => {
     basePage.visitUrl();
   });

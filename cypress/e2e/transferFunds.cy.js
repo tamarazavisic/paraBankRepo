@@ -6,11 +6,11 @@ import BasePage from "../support/pages/basePage";
 import HomePage from "../support/pages/homePage";
 import TransferFundsPage from "../support/pages/transferFundsPage";
 
-describe("transfer funds", () => {
-  const basePage = new BasePage();
-  const homePage = new HomePage();
-  const transferFundsPage = new TransferFundsPage();
+const basePage = new BasePage();
+const homePage = new HomePage();
+const transferFundsPage = new TransferFundsPage();
 
+describe("transfer funds", () => {
   beforeEach(() => {
     basePage.visitUrl();
     homePage.logInUser(Cypress.env("username"), Cypress.env("password"));
